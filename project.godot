@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Undefined Esotericism"
+config/description="My entry for the Weekly Jam 144 - \"Into the Dark\""
+run/main_scene="res://Assets/Scenes/Title/Title.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+DiceRoller="*res://Assets/Scenes/DiceRoller.gd"
+SaveData="*res://Assets/Scenes/SaveData.gd"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="item"
+2d_physics/layer_4="obstacle"
+
+[rendering]
+
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"

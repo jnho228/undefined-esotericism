@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/crystal_collected.wav-c1f45ef1ebe3ebf6bebcda7ebf22228d.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Effects/crystal_collected.wav"
+dest_files=[ "res://.import/crystal_collected.wav-c1f45ef1ebe3ebf6bebcda7ebf22228d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

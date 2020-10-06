@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Calm Ambient.wav-ef42743d41221fea6084bfaabb086292.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Calm Ambient.wav"
+dest_files=[ "res://.import/Calm Ambient.wav-ef42743d41221fea6084bfaabb086292.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

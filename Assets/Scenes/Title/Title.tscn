@@ -1,0 +1,139 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Scenes/Title/Title.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Audio/Music/Grand Introduction.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Effects/button_select.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 75
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="Title" type="Node"]
+script = ExtResource( 1 )
+sound_effect = ExtResource( 4 )
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -437.0
+margin_top = 40.0
+margin_right = 437.0
+margin_bottom = 134.0
+custom_fonts/font = SubResource( 1 )
+text = "Undefined Esotericism"
+align = 1
+valign = 1
+
+[node name="SubTitleLabel" type="Label" parent="GUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -191.0
+margin_top = 153.0
+margin_right = 191.0
+margin_bottom = 197.0
+custom_fonts/font = SubResource( 2 )
+text = "A Darkness Unknown"
+align = 1
+valign = 1
+
+[node name="CopyrightLabel" type="Label" parent="GUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -38.0
+margin_right = 264.0
+custom_fonts/font = SubResource( 3 )
+text = "(c) 2020 jnho228"
+
+[node name="VersionLabel" type="Label" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -143.0
+margin_top = -38.0
+custom_fonts/font = SubResource( 3 )
+text = "ver 0.1"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGameButton" type="Button" parent="GUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = 79.0
+margin_right = 56.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 4 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadGameButton" type="Button" parent="GUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = 54.0
+margin_right = 43.0
+margin_bottom = 74.0
+disabled = true
+text = "Load Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="GUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = 151.0
+margin_right = 41.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 5 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="EffectPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="pressed" from="GUI/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="GUI/LoadGameButton" to="." method="_on_LoadGameButton_pressed"]
+[connection signal="pressed" from="GUI/QuitButton" to="." method="_on_QuitButton_pressed"]

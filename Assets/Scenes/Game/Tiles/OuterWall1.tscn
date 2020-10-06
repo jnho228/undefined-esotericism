@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Scenes/Game/Tiles/BaseTile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Textures/OuterWall1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.1404, 28.9325 )
+
+[node name="OuterWall1" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 3
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )

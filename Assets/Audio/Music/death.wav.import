@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death.wav-243d04277b3e06e2e6cb2ca0ec80f179.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/death.wav"
+dest_files=[ "res://.import/death.wav-243d04277b3e06e2e6cb2ca0ec80f179.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

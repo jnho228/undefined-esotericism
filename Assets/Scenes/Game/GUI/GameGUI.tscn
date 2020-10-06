@@ -1,0 +1,344 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/Scenes/Game/GUI/GameGUI.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/health_bar.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/health_bar_under.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/exp_bar.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/hp icon.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/exp icon.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Textures/LightCrystal.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Audio/Effects/button_select.wav" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+outline_size = 3
+outline_color = Color( 1, 1, 1, 0 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 75
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 27
+font_data = ExtResource( 7 )
+
+[sub_resource type="InputEventKey" id=5]
+scancode = 16777217
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 27
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 22
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 75
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 7 )
+
+[node name="GameGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.487671
+margin_bottom = -0.487671
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+sound_effects = [ ExtResource( 9 ) ]
+
+[node name="HPIcon" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -37.0
+margin_right = 37.0
+margin_bottom = -5.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="HPIcon"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_top = -32.5688
+margin_right = 429.0
+margin_bottom = -0.568787
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+stretch_margin_left = 15
+stretch_margin_top = 15
+stretch_margin_right = 15
+stretch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeaponLabel" type="Label" parent="HPIcon"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 23.0
+margin_top = -42.0
+margin_right = 409.0
+margin_bottom = -14.0
+custom_fonts/font = SubResource( 1 )
+text = "Weapon Name"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EXPIcon" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -37.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 37.0
+texture = ExtResource( 6 )
+
+[node name="ExperienceBar" type="TextureProgress" parent="EXPIcon"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -289.0
+margin_top = 1.0
+margin_right = -39.0
+margin_bottom = 33.0
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+nine_patch_stretch = true
+stretch_margin_left = 15
+stretch_margin_top = 15
+stretch_margin_right = 15
+stretch_margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelUpPanel" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = -233.0
+margin_right = 165.0
+margin_bottom = 234.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmButton" type="Button" parent="LevelUpPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -103.5
+margin_top = -51.0
+margin_right = 104.5
+margin_bottom = -31.0
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelUpLabel" type="Label" parent="LevelUpPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -94.0
+margin_top = 17.785
+margin_right = 94.0
+margin_bottom = 31.785
+text = "Level [idk put a number here]"
+align = 1
+
+[node name="RemainingPointsLabel" type="Label" parent="LevelUpPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -63.5
+margin_top = 53.3893
+margin_right = 63.5
+margin_bottom = 67.3893
+text = "Remaining Points: 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialoguePanel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -577.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Make transparent later"
+}
+
+[node name="DialogueLabel" type="Label" parent="DialoguePanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -580.0
+custom_fonts/font = SubResource( 2 )
+align = 2
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausePanel" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+self_modulate = Color( 0, 0, 0, 0.713726 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseLabel" type="Label" parent="PausePanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.5
+margin_top = 112.0
+margin_right = 150.5
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 3 )
+text = "Paused!"
+align = 1
+valign = 1
+
+[node name="ReturnToGameButton" type="Button" parent="PausePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.5
+margin_top = -20.0
+margin_right = 112.5
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 4 )
+shortcut = SubResource( 6 )
+text = "Return to Game"
+
+[node name="ReturnToTitleButton" type="Button" parent="PausePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.0
+margin_top = 92.0
+margin_right = 87.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 7 )
+text = "Exit to Title"
+
+[node name="CrystalIcon" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -41.0
+margin_top = 54.0
+margin_right = -3.0
+margin_bottom = 92.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrystalCountLabel" type="Label" parent="CrystalIcon"]
+margin_left = -63.0
+margin_top = 4.0
+margin_right = -6.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 8 )
+text = "0 / 8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverPanel" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+self_modulate = Color( 0, 0, 0, 0.698039 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.0
+margin_top = 143.5
+margin_right = 144.0
+margin_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 9 )
+text = "Game Over!"
+align = 1
+valign = 1
+
+[node name="SlainLabel" type="Label" parent="GameOverPanel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 153.0
+margin_right = 20.0
+margin_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You were slain by a [mob name]."
+
+[node name="ReturnToTitleButton" type="Button" parent="GameOverPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = 42.0
+margin_right = 128.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 10 )
+text = "Return to Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EffectPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="pressed" from="LevelUpPanel/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="PausePanel/ReturnToGameButton" to="." method="_on_ReturnToGameButton_pressed"]
+[connection signal="pressed" from="PausePanel/ReturnToTitleButton" to="." method="_on_ReturnToTitleButton_pressed"]
+[connection signal="pressed" from="GameOverPanel/ReturnToTitleButton" to="." method="_on_ReturnToTitleButton_pressed"]
